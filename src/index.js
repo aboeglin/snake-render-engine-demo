@@ -1,9 +1,4 @@
-import {
-  initRenderer,
-  initWithRenderer,
-  Node,
-  Rect,
-} from "snake-render-engine";
+import SRE, { initRenderer, initWithRenderer, Rect } from "snake-render-engine";
 
 const canvas = document.getElementById("canvas");
 const height = canvas.height;
@@ -22,7 +17,6 @@ const makeStuff = (initialState) => {
   };
 
   const getState = () => {
-    console.log("getState", state);
     return state;
   };
 
@@ -34,11 +28,8 @@ const makeStuff = (initialState) => {
 
 const stuff = makeStuff(50);
 
-const withStuff = (N) => {
-  const Wrapper = (props, features) => {
-    console.log(features);
-    return <N {...props} stuffInjected={stuff} />;
-  };
+const withStuff = (Node) => {
+  const Wrapper = (props) => <Node {...props} stuffInjected={stuff} />;
   return Wrapper;
 };
 

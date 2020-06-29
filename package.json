@@ -6,14 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Arnaud Boeglin",
   "license": "ISC",
   "dependencies": {
-    "snake-render-engine": "^1.0.0--alpha-1"
+    "snake-render-engine": "^1.0.0--alpha-2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
-    "babel-plugin-snake-render-engine": "^1.0.0-alpha-1",
+    "babel-plugin-snake-render-engine": "^1.0.0-alpha-2",
     "babel-plugin-snake-render-engine-jsx": "^1.0.0-alpha-2",
     "nps": "^5.9.12",
     "parcel-bundler": "^1.12.4"
