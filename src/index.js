@@ -37,7 +37,7 @@ const stuff = makeStuff(50);
 const withStuff = (N) => {
   const Wrapper = (props, features) => {
     console.log(features);
-    return N({ ...props, stuffInjected: stuff });
+    return <N {...props} stuffInjected={stuff} />;
   };
   return Wrapper;
 };
@@ -56,4 +56,4 @@ const StuffedContainer = withStuff(Container);
 
 const Scene = () => <StuffedContainer />;
 
-run(<Scene />); 
+run(<Scene />);
