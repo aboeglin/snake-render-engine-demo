@@ -1,4 +1,4 @@
 {
   "presets": ["@babel/preset-env"],
-  "plugins": ["babel-plugin-snake-render-engine"]
+  "plugins": ["babel-plugin-snake-render-engine", "babel-plugin-snake-render-engine-jsx"]
 }

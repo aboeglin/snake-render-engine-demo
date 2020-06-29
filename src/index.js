@@ -34,23 +34,26 @@ const makeStuff = (initialState) => {
 
 const stuff = makeStuff(50);
 
-const withStuff = (node) => (props) => {
-  return Node(() => node({ ...props, stuffInjected: stuff }));
+const withStuff = (N) => {
+  const Wrapper = (props, features) => {
+    console.log(features);
+    return N({ ...props, stuffInjected: stuff });
+  };
+  return Wrapper;
 };
 
-const Container = ({ stuffInjected }) =>
-  Rect({
-    x: 320,
-    y: stuffInjected.getState(),
-    z: 0,
-    width: 640,
-    height: 100,
-    onClick: () => stuffInjected.setState(stuffInjected.getState() + 10),
-    children: [],
-  });
-
+const Container = ({ stuffInjected }) => (
+  <Rect
+    x={320}
+    y={stuffInjected.getState()}
+    z={0}
+    width={640}
+    height={100}
+    onClick={() => stuffInjected.setState(stuffInjected.getState() + 10)}
+  />
+);
 const StuffedContainer = withStuff(Container);
 
-const Scene = () => StuffedContainer();
+const Scene = () => <StuffedContainer />;
 
-run(Scene());
+run(<Scene />); 
